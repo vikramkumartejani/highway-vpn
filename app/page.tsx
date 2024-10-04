@@ -8,7 +8,7 @@ import GameServerSlider from "../components/GameServerSlider";
 export default function Home() {
   return (
     <div>
-      {/* <Hero /> */}
+      <Hero />
       <WhyChooseUs />
       <Pricing />
       <FAQ />
