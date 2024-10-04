@@ -1,35 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 ::-webkit-scrollbar {
-  width: 12px; 
-  height: 12px; 
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #001125; 
-  border-radius: 10px; 
+  background: #001125;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
+}
+
+/* Custom scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 @layer base {
