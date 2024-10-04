@@ -13,6 +13,10 @@ body{
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+.bgcustom{
+  background: linear-gradient(270deg, #01E4FD 0%, #0176FE 100%);
+}
+
 ::-webkit-scrollbar {
   width: 12px; 
   height: 12px; 
