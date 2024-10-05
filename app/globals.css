@@ -21,6 +21,10 @@ html {
   background: linear-gradient(270deg, #01e4fd 0%, #0176fe 100%);
 }
 
+.bgcustomone{
+  background: linear-gradient(270deg, #01E4FD 0%, #0176FE 100%);
+
+}
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
