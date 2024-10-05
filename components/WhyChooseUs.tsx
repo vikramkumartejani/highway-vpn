@@ -16,7 +16,7 @@ const VPNOption = ({
   bar: string;
 }) => (
   <div
-    className={`flex ${
+    className={` flex ${
       col ? "flex-col items-start" : "flex-row items-center"
     }  gap-[15px] p-[15px] w-full border border-[#00000033] rounded-[10px]`}
     style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
@@ -27,7 +27,7 @@ const VPNOption = ({
     >
       {icon}
     </div>
-    <div className="flex-grow w-full flex flex-col gap-[20px]">
+    <div className="flex-grow w-full flex flex-col gap-[21px]">
       <div className="flex justify-between items-center flex-wrap gap-1">
         <span className="font-[500] lg:text-[20px] text-black">{name}</span>
         <span
@@ -102,7 +102,7 @@ export default function WhyChooseUs() {
               icon={
                 <Image
                   className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
-                  src="/highwayvpn.png"
+                  src="/highwayvpn.svg"
                   width={50}
                   height={50}
                   alt="icon"
@@ -118,7 +118,7 @@ export default function WhyChooseUs() {
               icon={
                 <Image
                   className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
-                  src="/nordvpn.png"
+                  src="/nordvpn.svg"
                   width={50}
                   height={50}
                   alt="icon"
@@ -134,7 +134,7 @@ export default function WhyChooseUs() {
               icon={
                 <Image
                   className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
-                  src="/expressvpn.png"
+                  src="/expressvpn.svg"
                   width={50}
                   height={50}
                   alt="icon"
@@ -149,7 +149,7 @@ export default function WhyChooseUs() {
           </div>
 
           <div
-            className="flex flex-col gap-[28px] bg-white md:px-[25px] px-[15px] py-[32px] rounded-lg shadow-md"
+            className="flex flex-col gap-[27px] bg-white md:px-[25px] px-[15px] py-[32px] rounded-lg shadow-md"
             style={{
               boxShadow: "-1px 3px 20px 0px #0000001F",
             }}
@@ -157,11 +157,12 @@ export default function WhyChooseUs() {
             <h3 className="lg:text-[24px] md:text-[22px] text-[20px] font-[600] mb-[7px] text-black">
               Average Jitter
             </h3>
+            <div className="flex flex-col gap-[11px]">
             <VPNOption
               icon={
                 <Image
                   className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
-                  src="/highwayvpn.png"
+                  src="/highwayvpn.svg"
                   width={50}
                   height={50}
                   alt="icon"
@@ -177,7 +178,7 @@ export default function WhyChooseUs() {
               icon={
                 <Image
                   className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
-                  src="/none.png"
+                  src="/none.svg"
                   width={50}
                   height={50}
                   alt="icon"
@@ -189,6 +190,7 @@ export default function WhyChooseUs() {
               color="red"
               bar="30%"
             />
+            </div>
           </div>
         </div>
 

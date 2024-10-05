@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useRef, MouseEvent, useState } from "react";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
-// Extend HTMLDivElement to include custom properties, but don't override scrollLeft
 interface CustomDivElement extends HTMLDivElement {
   isDown?: boolean;
   startX?: number;
@@ -22,56 +21,56 @@ const connections: Connection[] = [
     id: "1",
     game: "Epic Games",
     cloud: "AWS",
-    logo: "/epic_games.png",
+    logo: "/epic_games.svg",
     cloudLogo: "/aws-cloud.svg",
   },
   {
     id: "2",
     game: "Activision Blizzard",
     cloud: "Google Cloud",
-    logo: "/activision_blizzard.png",
+    logo: "/activision_blizzard.svg",
     cloudLogo: "/google-cloud.svg",
   },
   {
     id: "3",
     game: "Electronic Arts",
     cloud: "AWS",
-    logo: "/electronic-arts.png",
+    logo: "/electronic-arts.svg",
     cloudLogo: "/azure-cloud.svg",
   },
   {
     id: "4",
     game: "Ubisoft",
     cloud: "Microsoft Azure",
-    logo: "/ubisoft.png",
+    logo: "/ubisoft.svg",
     cloudLogo: "/aws-cloud.svg",
   },
   {
     id: "5",
     game: "Game Studio 5",
     cloud: "AWS",
-    logo: "/epic_games.png",
+    logo: "/epic_games.svg",
     cloudLogo: "/google-cloud.svg",
   },
   {
     id: "6",
     game: "Electronic Arts",
     cloud: "AWS",
-    logo: "/electronic-arts.png",
+    logo: "/electronic-arts.svg",
     cloudLogo: "/azure-cloud.svg",
   },
   {
     id: "7",
     game: "Ubisoft",
     cloud: "Microsoft Azure",
-    logo: "/ubisoft.png",
+    logo: "/ubisoft.svg",
     cloudLogo: "/aws-cloud.svg",
   },
   {
     id: "8",
     game: "Game Studio 5",
     cloud: "AWS",
-    logo: "/epic_games.png",
+    logo: "/epic_games.svg",
     cloudLogo: "/google-cloud.svg",
   },
 ];
@@ -87,20 +86,20 @@ export default function Component() {
   const scrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: -311, // Adjust based on image width
+        left: -311, 
         behavior: "smooth",
       });
-      setActiveButton("left"); // Set active button to left
+      setActiveButton("left");
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: 311, // Adjust based on image width
+        left: 311, 
         behavior: "smooth",
       });
-      setActiveButton("right"); // Set active button to right
+      setActiveButton("right"); 
     }
   };
 
