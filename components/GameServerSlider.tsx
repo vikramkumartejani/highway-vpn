@@ -133,8 +133,8 @@ export default function Component() {
   };
 
   return (
-    <div className="w-full mx-auto lg:ps-[84px] md:ps-[34px] ps-[8px] py-8">
-      <div className="flex justify-between items-center md:mb-8 ps-[16px] lg:pe-[100px] md:pe-[50px] pe-[24px]">
+    <div className="w-full mx-auto lg:ps-[84px] md:ps-[34px] py-8">
+      <div className="flex justify-between items-center md:mb-8 sm:ps-[16px] ps-[15px] lg:pe-[100px] md:pe-[50px] pe-[24px]">
         <h1 className="lg:text-[45px] lg:leading-[58px] md:leading-[45px] md:text-[35px] sm:text-[30px] text-[20px] font-[600] max-w-[508px]">
           DIRECT GAMESERVER CONNECTIONS
         </h1>

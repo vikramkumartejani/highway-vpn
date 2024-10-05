@@ -37,49 +37,51 @@ const pricingPlans: PricingPlan[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <div className="bg-[#0170FE] w-full py-[104px] px-4 md:px-8">
+    <div className="bg-[#0170FE] w-full py-[100px] md:py-[180px] lg:px-[84px] md:px-[34px] px-[15px]">
       <div className="w-full max-w-[1240px] mx-auto">
-        <h2 className="text-center text-white text-[48px] leading-[58px] font-semibold uppercase">
+        <h2 className="text-center text-white md:text-[48px] text-[30px] md:leading-[58px] font-semibold uppercase">
           pricing
         </h2>
         {/* Plan */}
-        <div className="mt-11 grid grid-cols-3 gap-[24px]">
+        <div className="mt-11 flex lg:flex-row flex-col gap-[24px] items-center justify-between">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className="w-full rounded-[22px] py-[28px] px-6 bg-white relative"
+              className="lg:w-[30%] sm:w-[90%] w-full  rounded-[22px] py-[28px] lg:px-6 px-4 bg-white relative"
             >
               {plan.discount && (
-                <div className="absolute -top-[4.5px] right-[24px]">
+                <div className="absolute -top-[4.5px] lg:right-[24px] right-[10px]">
                   <Image src={Badge} alt="badge" width={70} height={70} />
                   <div className="absolute top-2.5 right-[14px] w-[40px]  text-white text-[14px] leading-[16px] font-medium">
                     <h2>{plan.discount}</h2>
                   </div>
                 </div>
               )}
-              <h2 className="text-[#111111] text-[26px] leading-[26px] font-semibold text-center capitalize">
+              <h2 className="text-[#111111] md:text-[26px] text-[22px] md:eading-[26px] font-semibold text-center capitalize">
                 {plan.title}
               </h2>
-              <div className="mt-10 flex items-end justify-center text-[#111111] font-normal">
-                <h2 className="text-[96px] leading-[86px]">${plan.price}</h2>
-                <span className="text-[18px] leading-[24.59px] font-normal">
+              <div className="md:mt-10 mt-4 flex items-end justify-center text-[#111111] font-normal">
+                <h2 className="md:text-[96px] text-[70px] md:leading-[86px] leading-[70px]">
+                  ${plan.price}
+                </h2>
+                <span className="md:text-[18px] leading-[24.59px] font-normal">
                   / Month
                 </span>
               </div>
               {plan.total && (
-                <h2 className="mt-10 text-[#333333] text-[24px] leading-[25px] font-medium capitalize text-center">
+                <h2 className="md:mt-10 mt-4 text-[#333333] md:text-[24px] text-[20px] leading-[25px] font-medium capitalize text-center">
                   ${plan.total} Total
                 </h2>
               )}
-              <button className="mt-[28px] capitalize bgcustom w-full h-[56px] rounded-[70px] text-white text-[16px] leading-[20.16px] font-bold">
+              <button className="md:mt-[28px] mt-[16px] capitalize bgcustom w-full md:h-[56px] h-[50px] rounded-[70px] text-white text-[16px] leading-[20.16px] font-bold">
                 {plan.buttonText}
               </button>
             </div>
           ))}
         </div>
-        <div className="mt-[31px] flex items-center text-center justify-center gap-2 text-shadow-custom text-white">
+        <div className="mt-[31px] flex items-center justify-center gap-2 text-shadow-custom text-white">
           <Image src={Info} alt="info" width={16} height={16} />
-          <p className="text-[18px] leading-[18px] font-medium ">
+          <p className="md:text-[18px] leading-[18px] font-medium ">
             When subscribed, an email will be sent to you with the install
             instructions.
           </p>
