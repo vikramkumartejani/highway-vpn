@@ -22,7 +22,7 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          className="z-0 opacity-70"  
+          className="z-0 opacity-70"
         />
         <Image
           src="/gg.svg"
@@ -30,7 +30,7 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          className="z-0 opacity-50" 
+          className="z-0 opacity-50"
         />
       </div>
 
@@ -48,9 +48,11 @@ const Hero = () => {
           <h3 className="mt-6 md:mt-12 text-[#01E4FD] text-[20px] sm:text-[24px] leading-[24px] font-semibold uppercase">
             built for competitive gaming
           </h3>
-          <button className="mt-6 md:mt-12 text-white text-[16px] sm:text-[18px] leading-[18px] font-medium w-[214px] h-[45px] sm:h-[54px] rounded-[70px] bg-[#01E4FD] hover:bg-[#00C0E5] transition duration-300 capitalize">
-            try for free
-          </button>
+          <a href="/#pricing" className="w-fit h-fit">
+            <button className="mt-6 md:mt-12 text-white text-[16px] sm:text-[18px] leading-[18px] font-medium w-[214px] h-[45px] sm:h-[54px] rounded-[70px] bg-[#01E4FD] hover:bg-[#00C0E5] transition duration-300 capitalize">
+              try for free
+            </button>
+          </a>
         </div>
         <div className="w-full h-full">
           <GlobeDemo />

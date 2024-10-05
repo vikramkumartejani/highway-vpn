@@ -13,6 +13,10 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .bgcustom {
   background: linear-gradient(270deg, #01e4fd 0%, #0176fe 100%);
 }

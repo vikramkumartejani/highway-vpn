@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRef, MouseEvent, useState } from "react";
+import { useRef, useState } from "react";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
 interface CustomDivElement extends HTMLDivElement {
@@ -86,7 +86,7 @@ export default function Component() {
   const scrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: -311, 
+        left: -311,
         behavior: "smooth",
       });
       setActiveButton("left");
@@ -96,39 +96,11 @@ export default function Component() {
   const scrollRight = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: 311, 
+        left: 311,
         behavior: "smooth",
       });
-      setActiveButton("right"); 
+      setActiveButton("right");
     }
-  };
-
-  const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
-    if (scrollRef.current) {
-      scrollRef.current.isDown = true;
-      scrollRef.current.startX = e.pageX - scrollRef.current.offsetLeft;
-      scrollRef.current.scrollLeft = scrollRef.current.scrollLeft; // scrollLeft is still a number
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (scrollRef.current) {
-      scrollRef.current.isDown = false;
-    }
-  };
-
-  const handleMouseUp = () => {
-    if (scrollRef.current) {
-      scrollRef.current.isDown = false;
-    }
-  };
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!scrollRef.current?.isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - (scrollRef.current.startX || 0)) * 2; // Scroll speed
-    scrollRef.current.scrollLeft = (scrollRef.current.scrollLeft || 0) - walk;
   };
 
   return (
@@ -164,11 +136,7 @@ export default function Component() {
       </div>
       <div
         ref={scrollRef}
-        className="w-full md:h-[300px] h-[220px] flex items-center overflow-x-auto ps-4 xxl:ps-20 scrollbar-hide cursor-grab"
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
+        className="w-full md:h-[300px] h-[220px] flex items-center overflow-x-auto ps-4 xxl:ps-20 scrollbar-hide"
       >
         <div className="flex gap-4">
           {connections.map((connection) => (

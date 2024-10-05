@@ -9,6 +9,7 @@ interface PricingPlan {
   total?: number;
   discount?: string;
   buttonText: string;
+  buttonLink: string;
 }
 
 // Define the array of pricing plans
@@ -18,6 +19,7 @@ const pricingPlans: PricingPlan[] = [
     price: 15,
     total: 15,
     buttonText: "Start Free Trial",
+    buttonLink: "#1",
   },
   {
     title: "1 Year Plan",
@@ -25,6 +27,7 @@ const pricingPlans: PricingPlan[] = [
     total: 5,
     discount: "Save 46%",
     buttonText: "Start Free Trial",
+    buttonLink: "#2",
   },
   {
     title: "3 Year Plan",
@@ -32,6 +35,7 @@ const pricingPlans: PricingPlan[] = [
     total: 180,
     discount: "Save 46%",
     buttonText: "Start Free Trial",
+    buttonLink: "#1",
   },
 ];
 
@@ -76,9 +80,11 @@ const Pricing: React.FC = () => {
                   ${plan.total} Total
                 </h2>
               )}
-              <button className="mt-[28px] capitalize bgcustom w-full md:h-[56px] h-[50px] rounded-[70px] text-white text-[16px] leading-[20.16px] font-bold">
-                {plan.buttonText}
-              </button>
+              <a href={plan.buttonLink} className="w-full h-fit">
+                <button className="mt-[28px] capitalize bgcustom w-full md:h-[56px] h-[50px] rounded-[70px] text-white text-[16px] leading-[20.16px] font-bold">
+                  {plan.buttonText}
+                </button>
+              </a>
             </div>
           ))}
         </div>
