@@ -26,10 +26,16 @@ const FAQs: FAQItem[] = [
 ];
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  // Change activeIndex to an array
+  const [activeIndices, setActiveIndices] = useState<number[]>([1]);
 
+  // Modify toggleFAQ to add/remove index from activeIndices
   const toggleFAQ = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    if (activeIndices.includes(index)) {
+      setActiveIndices(activeIndices.filter(i => i !== index));
+    } else {
+      setActiveIndices([...activeIndices, index]);
+    }
   };
 
   return (
@@ -56,7 +62,7 @@ const FAQ = () => {
                       width={26}
                       height={26}
                       className={`transition-all duration-300 ease-in-out ${
-                        activeIndex === index && "rotate-[180deg]"
+                        activeIndices.includes(index) && "rotate-[180deg]"
                       }`}
                     />
                   </button>
@@ -64,7 +70,7 @@ const FAQ = () => {
               </div>
               <div
                 className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-                  activeIndex === index ? "max-h-[500px]" : "max-h-0"
+                  activeIndices.includes(index) ? "max-h-[500px]" : "max-h-0"
                 }`}
               >
                 <p className="pt-2 sm:pt-4 text-[#333333] text-[15px] sm:text-[18px] sm:leading-[28px] font-normal sm:pr-8">
