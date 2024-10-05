@@ -27,7 +27,7 @@ const FAQs: FAQItem[] = [
 
 const FAQ = () => {
   // Change activeIndex to an array
-  const [activeIndices, setActiveIndices] = useState<number[]>([1]);
+  const [activeIndices, setActiveIndices] = useState<number[]>([0]);
 
   // Modify toggleFAQ to add/remove index from activeIndices
   const toggleFAQ = (index: number) => {
