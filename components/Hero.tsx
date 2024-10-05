@@ -22,7 +22,7 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          className="z-0 opacity-70" // Optional: Adjust opacity for visual depth
+          className="z-0 opacity-70"  
         />
         <Image
           src="/gg.svg"
@@ -30,14 +30,14 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          className="z-0 opacity-50" // Optional: Adjust opacity for visual depth
+          className="z-0 opacity-50" 
         />
       </div>
 
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
 
-      <Header/>
+      <Header />
 
       {/* Main Content */}
       <div className="max-w-[1240px] py-10 sm:py-[60px] md:py-[100px] lg:py-0 w-full mx-auto gap-10 lg:gap-5 flex lg:flex-row flex-col items-center justify-between relative z-20">

@@ -13,8 +13,8 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.bgcustom{
-  background: linear-gradient(270deg, #01E4FD 0%, #0176FE 100%);
+.bgcustom {
+  background: linear-gradient(270deg, #01e4fd 0%, #0176fe 100%);
 }
 
 ::-webkit-scrollbar {
@@ -40,18 +40,18 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-.customshadow{
-  box-shadow: -1px 3px 30px 0px #0000001F;
+.customshadow {
+  box-shadow: -1px 3px 30px 0px #0000001f;
 }
 
-.bgcolor{
-  background: linear-gradient(270deg, #01E4FD 0%, #0176FE 100%);
-
+.bgcolor {
+  background: linear-gradient(270deg, #01e4fd 0%, #0176fe 100%);
 }
 
 @layer base {
