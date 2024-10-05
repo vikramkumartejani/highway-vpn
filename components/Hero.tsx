@@ -38,9 +38,9 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
 
       {/* Main Content */}
-      <div className="max-w-[1240px]  w-full mx-auto gap-10 lg:gap-5 flex lg:flex-row flex-col items-center justify-between relative z-20">
+      <div className="max-w-[1240px]  w-full mx-auto gap-5 flex lg:flex-row flex-col items-center justify-between relative z-20">
         <div className="flex flex-col w-full">
-          <div className=" pb-[100px]">
+          <div className="pb-[60px] sm:pb-[100px]">
             <Header />
           </div>
           <div className="w-full pb-[20px] lg:pb-[100px]">
