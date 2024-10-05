@@ -37,7 +37,7 @@ const pricingPlans: PricingPlan[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <div className="bg-[#0170FE] w-full py-[100px] md:py-[180px] lg:px-[84px] md:px-[34px] px-[15px]">
+    <div className="bg-[#0170FE] w-full py-[100px] lg:px-[84px] md:px-[34px] px-[15px]">
       <div className="w-full max-w-[1240px] mx-auto">
         <h2 className="text-center text-white md:text-[48px] text-[30px] md:leading-[58px] font-semibold uppercase">
           pricing
@@ -52,15 +52,15 @@ const Pricing: React.FC = () => {
               {plan.discount && (
                 <div className="absolute -top-[4.5px] lg:right-[24px] right-[10px]">
                   <Image src={Badge} alt="badge" width={70} height={70} />
-                  <div className="absolute top-2.5 right-[14px] w-[40px]  text-white text-[14px] leading-[16px] font-medium">
+                  <div className="absolute top-2.5 right-[12px] w-[40px]  text-white text-[14px] leading-[16px] font-medium">
                     <h2>{plan.discount}</h2>
                   </div>
                 </div>
               )}
-              <h2 className="text-[#111111] md:text-[26px] text-[22px] md:eading-[26px] font-semibold text-center capitalize">
+              <h2 className="text-[#111111] md:text-[26px] text-[22px] md:leading-[26px] font-semibold text-center capitalize">
                 {plan.title}
               </h2>
-              <div className="md:mt-10 mt-4 flex items-end justify-center text-[#111111] font-normal">
+              <div className="mt-10 flex items-end justify-center text-[#111111] font-normal">
                 <h2 className="md:text-[96px] text-[70px] md:leading-[86px] leading-[70px]">
                   ${plan.price}
                 </h2>
@@ -69,11 +69,11 @@ const Pricing: React.FC = () => {
                 </span>
               </div>
               {plan.total && (
-                <h2 className="md:mt-10 mt-4 text-[#333333] md:text-[24px] text-[20px] leading-[25px] font-medium capitalize text-center">
+                <h2 className="mt-10 text-[#333333] md:text-[24px] text-[20px] leading-[25px] font-medium capitalize text-center">
                   ${plan.total} Total
                 </h2>
               )}
-              <button className="md:mt-[28px] mt-[16px] capitalize bgcustom w-full md:h-[56px] h-[50px] rounded-[70px] text-white text-[16px] leading-[20.16px] font-bold">
+              <button className="mt-[28px] capitalize bgcustom w-full md:h-[56px] h-[50px] rounded-[70px] text-white text-[16px] leading-[20.16px] font-bold">
                 {plan.buttonText}
               </button>
             </div>

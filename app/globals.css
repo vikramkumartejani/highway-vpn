@@ -45,6 +45,11 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+.customshadow{
+  box-shadow: -1px 3px 30px 0px #0000001F;
+
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
