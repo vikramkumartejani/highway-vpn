@@ -28,14 +28,15 @@ export default function Footer() {
                 Instant free cancellation at anytime.
               </p>
             </div>
-            <button
+            <a
+              href="/#pricing"
               className="text-white font-[700] md:p-[17px] p-[12px] rounded-full transition-colors shadow-lg md:text-[18px] text-[16px] text-center md:w-[250px] sm:w-[180px]"
               style={{
                 background: "linear-gradient(270deg, #01E4FD 0%, #0176FE 100%)",
               }}
             >
               Subscribe Now
-            </button>
+            </a>
           </div>
         </div>
         <div className="relative mt-[50px] lg:px-[84px] md:px-[34px] px-[15px] pb-[55px] z-[2]">

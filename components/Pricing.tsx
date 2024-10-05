@@ -37,7 +37,10 @@ const pricingPlans: PricingPlan[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <div className="bg-[#0170FE] w-full py-[100px] md:py-[180px] lg:px-[84px] md:px-[34px] px-[15px]">
+    <div
+      id="pricing"
+      className="bg-[#0170FE] w-full py-[100px] md:py-[180px] lg:px-[84px] md:px-[34px] px-[15px]"
+    >
       <div className="w-full max-w-[1240px] mx-auto">
         <h2 className="text-center text-white md:text-[48px] text-[30px] md:leading-[58px] font-semibold uppercase">
           pricing
