@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const VPNOption = ({
@@ -14,42 +16,73 @@ const VPNOption = ({
   icon: React.ReactNode;
   col: boolean;
   bar: string;
-}) => (
-  <div
-    className={` flex ${
-      col ? "flex-col items-start" : "flex-row items-center"
-    }  gap-[15px] p-[15px] w-full border border-[#00000033] rounded-[10px]`}
-    style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
-  >
+}) => {
+  const [barWidth, setBarWidth] = useState("0%");
+  const barRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setBarWidth(bar); // Set the bar width to the target value when in view
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Adjust as needed
+      }
+    );
+
+    if (barRef.current) {
+      observer.observe(barRef.current);
+    }
+
+    return () => {
+      if (barRef.current) {
+        observer.unobserve(barRef.current);
+      }
+    };
+  }, [bar]);
+
+  return (
     <div
-      className="md:w-[70px] md:min-w-[70px] min-w-[60px] w-[60px] md:h-[70px] md:min-h-[70px] min-h-[60px] h-[60px] rounded-[10px] bg-white flex items-center justify-center border border-[#00000029]"
-      style={{ boxShadow: "0px 0px 18px 0px #0000001C" }}
+      className={`flex ${
+        col ? "flex-col items-start" : "flex-row items-center"
+      }  gap-[15px] p-[15px] w-full border border-[#00000033] rounded-[10px]`}
+      style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
     >
-      {icon}
-    </div>
-    <div className="flex-grow w-full flex flex-col gap-[21px]">
-      <div className="flex justify-between items-center flex-wrap gap-1">
-        <span className="font-[500] lg:text-[20px] text-black">{name}</span>
-        <span
-          className={`text-[14px] leading-[14px] font-[500] text-white rounded-full px-[20px] py-[6px] ${
-            color === "green" ? "bg-[#6BB66B]" : "bg-[#FF5252]"
-          }`}
-        >
-          {latency}
-        </span>
+      <div
+        className="md:w-[70px] md:min-w-[70px] min-w-[60px] w-[60px] md:h-[70px] md:min-h-[70px] min-h-[60px] h-[60px] rounded-[10px] bg-white flex items-center justify-center border border-[#00000029]"
+        style={{ boxShadow: "0px 0px 18px 0px #0000001C" }}
+      >
+        {icon}
       </div>
-      <div className="h-[10px] w-full rounded-full bg-[#E6E6E6]">
-        <div
-          className="h-[10px] rounded-full w-full"
-          style={{
-            width: bar,
-            backgroundColor: color === "green" ? "#6BB66B" : "#FF5252",
-          }}
-        ></div>
+      <div className="flex-grow w-full flex flex-col gap-[21px]">
+        <div className="flex justify-between items-center flex-wrap gap-1">
+          <span className="font-[500] lg:text-[20px] text-black">{name}</span>
+          <span
+            className={`text-[14px] leading-[14px] font-[500] text-white rounded-full px-[20px] py-[6px] ${
+              color === "green" ? "bg-[#6BB66B]" : "bg-[#FF5252]"
+            }`}
+          >
+            {latency}
+          </span>
+        </div>
+        <div className="h-[10px] w-full rounded-full bg-[#E6E6E6]">
+          <div
+            ref={barRef}
+            className="h-[10px] rounded-full transition-all duration-1000"
+            style={{
+              width: barWidth, // Use state to control width
+              backgroundColor: color === "green" ? "#6BB66B" : "#FF5252",
+            }}
+          ></div>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const FeatureBox = ({
   icon,
@@ -158,38 +191,38 @@ export default function WhyChooseUs() {
               Average Jitter
             </h3>
             <div className="flex flex-col gap-[11px]">
-            <VPNOption
-              icon={
-                <Image
-                  className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
-                  src="/highwayvpn.svg"
-                  width={50}
-                  height={50}
-                  alt="icon"
-                />
-              }
-              col={true}
-              name="HighwayVPN"
-              latency="8ms"
-              color="green"
-              bar="17%"
-            />
-            <VPNOption
-              icon={
-                <Image
-                  className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
-                  src="/none.svg"
-                  width={50}
-                  height={50}
-                  alt="icon"
-                />
-              }
-              col={true}
-              name="Without VPN"
-              latency="12ms"
-              color="red"
-              bar="30%"
-            />
+              <VPNOption
+                icon={
+                  <Image
+                    className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
+                    src="/highwayvpn.svg"
+                    width={50}
+                    height={50}
+                    alt="icon"
+                  />
+                }
+                col={true}
+                name="HighwayVPN"
+                latency="8ms"
+                color="green"
+                bar="17%"
+              />
+              <VPNOption
+                icon={
+                  <Image
+                    className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
+                    src="/none.svg"
+                    width={50}
+                    height={50}
+                    alt="icon"
+                  />
+                }
+                col={true}
+                name="Without VPN"
+                latency="12ms"
+                color="red"
+                bar="30%"
+              />
             </div>
           </div>
         </div>

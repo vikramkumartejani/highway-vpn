@@ -1,12 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRef, useState } from "react";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-
-interface CustomDivElement extends HTMLDivElement {
-  isDown?: boolean;
-  startX?: number;
-}
+import Marquee from "react-fast-marquee"; // Import the Marquee component
 
 interface Connection {
   id: string;
@@ -76,69 +70,15 @@ const connections: Connection[] = [
 ];
 
 export default function Component() {
-  const scrollRef = useRef<CustomDivElement | null>(null);
-
-  // State to track which button is currently active
-  const [activeButton, setActiveButton] = useState<"left" | "right" | null>(
-    null
-  );
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: -311,
-        behavior: "smooth",
-      });
-      setActiveButton("left");
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: 311,
-        behavior: "smooth",
-      });
-      setActiveButton("right");
-    }
-  };
-
   return (
     <div className="w-full mx-auto lg:ps-[84px] md:ps-[34px] py-8">
       <div className="flex justify-between items-center md:mb-8 sm:ps-[16px] ps-[15px] lg:pe-[100px] md:pe-[50px] pe-[24px]">
         <h1 className="lg:text-[45px] lg:leading-[58px] md:leading-[45px] md:text-[35px] sm:text-[30px] text-[20px] font-[600] max-w-[508px]">
           DIRECT GAMESERVER CONNECTIONS
         </h1>
-        <div className="flex gap-[8px]">
-          <button
-            onClick={scrollLeft}
-            className={`md:w-[52px] md:h-[52px] min-h-[30px] h-[30px] min-w-[30px] w-[30px] rounded-full from-[#01E4FD] to-[#0176FE] flex items-center justify-center transition duration-200 ${
-              activeButton === "left"
-                ? "bg-gradient-to-r border-0 text-white"
-                : "border-[1.8px] border-black"
-            }`}
-            aria-label="Previous slide"
-          >
-            <IoIosArrowRoundBack className="md:w-[30px] min-w-[18px] min-h-[18px] w-[18px] md:h-[30px] h-[18px]" />
-          </button>
-          <button
-            onClick={scrollRight}
-            className={`md:w-[52px] md:h-[52px] min-h-[30px] h-[30px] min-w-[30px] w-[30px] rounded-full flex items-center from-[#01E4FD] to-[#0176FE] justify-center transition duration-200 ${
-              activeButton === "right"
-                ? "bg-gradient-to-r border-0 text-white"
-                : "border-[1.8px] border-black"
-            }`}
-            aria-label="Next slide"
-          >
-            <IoIosArrowRoundForward className="md:w-[30px] w-[20px] md:h-[30px] h-[20px]" />
-          </button>
-        </div>
       </div>
-      <div
-        ref={scrollRef}
-        className="w-full md:h-[300px] h-[220px] flex items-center overflow-x-auto ps-4 xxl:ps-20 scrollbar-hide"
-      >
-        <div className="flex gap-4">
+      <Marquee gradient={false} speed={70}>
+        <div className="flex gap-4 md:pt-0 pt-6">
           {connections.map((connection) => (
             <div
               key={connection.id}
@@ -165,10 +105,8 @@ export default function Component() {
               />
             </div>
           ))}
-          {/* Spacer */}
-          <div className="min-w-[1px] flex-shrink-0"></div>
         </div>
-      </div>
+      </Marquee>
     </div>
   );
 }
