@@ -80,7 +80,7 @@ export default function Component() {
       <Marquee gradient={false} speed={50}>
         {/* Duplicate the first item to create the illusion of consistent gap */}
         <div className="flex gap-4">
-          {connections.map((connection, index) => (
+          {connections.map((connection) => (
             <div
               key={connection.id}
               className="md:w-[292px] w-[200px] md:h-[242px] h-[170px] rounded-[18px] flex-shrink-0 md:px-[28px] md:pt-[28px] pt-[20px] md:pb-[28px] px-[12px] pb-[0] flex flex-col items-center justify-between md:bg-[#F0F0F0] transition bg-white hover:bg-white border border-[#00000029]"
