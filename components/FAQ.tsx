@@ -60,6 +60,7 @@ const FAQ = () => {
                       src="/arrow-up.svg"
                       alt="arrow"
                       width={26}
+                      draggable="false"
                       height={26}
                       className={`transition-all duration-300 ease-in-out ${
                         activeIndices.includes(index) && "rotate-[180deg]"

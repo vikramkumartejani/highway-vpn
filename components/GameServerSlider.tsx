@@ -89,6 +89,7 @@ export default function Component() {
                 <Image
                   width={25.17}
                   height={28.19}
+                  draggable="false"
                   src={connection.logo}
                   alt={connection.game}
                 />
@@ -98,6 +99,7 @@ export default function Component() {
               </div>
               <img
                 className="object-contain w-full h-full"
+                draggable="false"
                 src={connection.cloudLogo}
                 alt={connection.game}
               />

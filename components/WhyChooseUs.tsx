@@ -138,6 +138,7 @@ export default function WhyChooseUs() {
                   src="/highwayvpn.svg"
                   width={50}
                   height={50}
+                  draggable="false"
                   alt="icon"
                 />
               }
@@ -152,6 +153,7 @@ export default function WhyChooseUs() {
                 <Image
                   className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
                   src="/nordvpn.svg"
+                  draggable="false"
                   width={50}
                   height={50}
                   alt="icon"
@@ -168,6 +170,7 @@ export default function WhyChooseUs() {
                 <Image
                   className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
                   src="/expressvpn.svg"
+                  draggable="false"
                   width={50}
                   height={50}
                   alt="icon"
@@ -196,6 +199,7 @@ export default function WhyChooseUs() {
                   <Image
                     className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
                     src="/highwayvpn.svg"
+                    draggable="false"
                     width={50}
                     height={50}
                     alt="icon"
@@ -212,6 +216,7 @@ export default function WhyChooseUs() {
                   <Image
                     className="md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
                     src="/none.svg"
+                    draggable="false"
                     width={50}
                     height={50}
                     alt="icon"
@@ -232,6 +237,7 @@ export default function WhyChooseUs() {
             icon={
               <Image
                 src="/lock-icon.svg"
+                draggable="false"
                 width={28.89}
                 height={28.89}
                 alt="icon"
@@ -245,6 +251,7 @@ export default function WhyChooseUs() {
             icon={
               <Image
                 src="/link-icon.svg"
+                draggable="false"
                 width={26.67}
                 height={20}
                 alt="icon"
@@ -258,6 +265,7 @@ export default function WhyChooseUs() {
             icon={
               <Image
                 src="/dragon-icon.svg"
+                draggable="false"
                 width={18.44}
                 height={31.42}
                 alt="icon"

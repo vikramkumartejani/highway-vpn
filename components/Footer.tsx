@@ -9,10 +9,12 @@ export default function Footer() {
       <div className="py-8 text-white relative">
         <img
           src="/footer-bg.png"
+          draggable="false"
           className="w-full h-full object-cover absolute left-0 z-[1]"
         />
         <img
           src="/footer-bg-style.png"
+          draggable="false"
           className="w-full h-full object-cover absolute left-0 -bottom-8 z-[1]"
         />
         <div className="relative container max-w-[1140px] mx-auto text-black mt-[-85px] px-4 z-[40]">
@@ -43,7 +45,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="mb-4 md:mb-0">
               <Link href="/" className="text-2xl font-bold">
-                <Image src="/logo.svg" alt="logo" width={226.79} height={80} />
+                <Image src="/logo.svg" alt="logo" draggable="false" width={226.79} height={80} />
               </Link>
             </div>
             <div className="flex space-x-4">

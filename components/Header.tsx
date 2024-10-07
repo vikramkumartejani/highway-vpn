@@ -8,8 +8,9 @@ const Header = () => {
         src="/hero-logo.svg"
         alt="logo"
         width={200}
+        draggable="false"
         height={80}
-        className="relative z-20 pt-8 md:pt-[50px]"
+        className="relative z-20 pt-8 md:pt-[50px] select-none "
       />
     </div>
   );

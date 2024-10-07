@@ -58,7 +58,7 @@ const Pricing: React.FC = () => {
             >
               {plan.discount && (
                 <div className="absolute -top-[4.5px] lg:right-[24px] right-[10px]">
-                  <Image src={Badge} alt="badge" width={70} height={70} />
+                  <Image src={Badge} alt="badge" draggable="false" width={70} height={70} />
                   <div className="absolute top-2.5 right-[12px] w-[40px]  text-white text-[14px] leading-[16px] font-medium">
                     <h2>{plan.discount}</h2>
                   </div>
@@ -89,7 +89,7 @@ const Pricing: React.FC = () => {
           ))}
         </div>
         <div className="mt-[31px] flex items-center justify-center gap-2 text-shadow-custom text-white">
-          <Image src={Info} alt="info" width={16} height={16} />
+          <Image src={Info} alt="info" width={16} draggable="false" height={16} />
           <p className="md:text-[18px] leading-[18px] font-medium ">
             When subscribed, an email will be sent to you with the install
             instructions.

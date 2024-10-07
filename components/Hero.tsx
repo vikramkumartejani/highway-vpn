@@ -13,6 +13,7 @@ const Hero = () => {
           alt="hero-bg"
           layout="fill"
           objectFit="cover"
+          draggable="false"
           quality={100}
           className="z-0"
         />
@@ -20,6 +21,7 @@ const Hero = () => {
           src="/herobglines.svg"
           alt="hero lines"
           layout="fill"
+          draggable="false"
           objectFit="cover"
           quality={100}
           className="z-0 opacity-70"
@@ -29,6 +31,7 @@ const Hero = () => {
           alt="background design"
           layout="fill"
           objectFit="cover"
+          draggable="false"
           quality={100}
           className="z-0 opacity-50"
         />
