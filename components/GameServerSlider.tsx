@@ -77,15 +77,13 @@ export default function Component() {
           DIRECT GAMESERVER CONNECTIONS
         </h1>
       </div>
-      <Marquee gradient={false} speed={70}>
-        <div className="flex gap-4 md:pt-0 pt-6">
-          {connections.map((connection) => (
+      <Marquee gradient={false} speed={50}>
+        {/* Duplicate the first item to create the illusion of consistent gap */}
+        <div className="flex gap-4">
+          {connections.map((connection, index) => (
             <div
               key={connection.id}
-              className="md:w-[292px] w-[200px] md:h-[242px] h-[170px] rounded-[18px] flex-shrink-0 md:px-[28px] md:pt-[28px] pt-[20px] md:pb-[28px] px-[12px] pb-[0] flex flex-col items-center justify-between"
-              style={{
-                boxShadow: "-1px 3px 30px 0px #0000001F",
-              }}
+              className="md:w-[292px] w-[200px] md:h-[242px] h-[170px] rounded-[18px] flex-shrink-0 md:px-[28px] md:pt-[28px] pt-[20px] md:pb-[28px] px-[12px] pb-[0] flex flex-col items-center justify-between md:bg-[#F0F0F0] transition bg-white hover:bg-white border border-[#00000029]"
             >
               <div className="flex gap-[8px] items-center justify-center">
                 <Image
@@ -105,6 +103,8 @@ export default function Component() {
               />
             </div>
           ))}
+          {/* Spacer to create the gap at the end of the Marquee */}
+          <div className="min-w-[0px]"></div> {/* Match the size of items */}
         </div>
       </Marquee>
     </div>
